@@ -1,0 +1,7 @@
+// General styles for index.html
+
+@use 'base';
+
+body {
+  background-color: base.$primary-color;
+}

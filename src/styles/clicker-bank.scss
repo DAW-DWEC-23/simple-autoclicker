@@ -1,0 +1,11 @@
+// ----------------------------------------------------------------------------
+// Clicker Bank component
+// ----------------------------------------------------------------------------
+
+@use 'base';
+
+:host {
+  display: inline-block;
+  border: 2px dashed base.$accent-color;
+  padding: 0.5rem;
+}
