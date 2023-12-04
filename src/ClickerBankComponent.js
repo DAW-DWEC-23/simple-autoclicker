@@ -1,6 +1,7 @@
 "use strict";
 
 import Helper from "./ClickerHelper.js";
+import stylesString from './styles/clicker-bank.scss?inline';
 
 export default class ClickerBankComponent extends HTMLElement {
   constructor() {
@@ -43,7 +44,7 @@ export default class ClickerBankComponent extends HTMLElement {
   render() {
     this.shadowRoot.innerHTML = /*html*/ `
       <style>
-        @import './src/styles/clicker-bank.scss';
+        ${stylesString}
       </style>
       <h3>🏦</h3>
       <p class="clicker-bank-savings">💵 ${Helper.formatAmount(

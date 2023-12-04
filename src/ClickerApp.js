@@ -6,6 +6,7 @@
 
 import Bank from './ClickerBankComponent.js';
 import Generator from './ClickerGeneratorComponent.js';
+import stylesString from './styles/clicker-app.scss?inline';
 
 // Array de objetos con los datos de los generadores
 import { generators } from "./clicker-data.js";
@@ -24,7 +25,7 @@ class ClickerApp extends HTMLElement {
   render() {
     this.shadowRoot.innerHTML = /*html*/ `
       <style>
-        @import './src/styles/clicker-app.scss';
+        ${stylesString}
       </style>
         <h1>Simple Auto-Clicker</h1>
         <clicker-bank class="clicker-bank"></clicker-bank>

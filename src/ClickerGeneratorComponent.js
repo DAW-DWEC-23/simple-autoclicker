@@ -1,6 +1,7 @@
 'use strict';
 
 import Helper from "./ClickerHelper.js";
+import stylesString from './styles/clicker-generator.scss?inline';
 
 export default class ClickerGenerator extends HTMLElement {
 
@@ -72,7 +73,7 @@ export default class ClickerGenerator extends HTMLElement {
   render() {
     this.shadowRoot.innerHTML = /*html*/ `
       <style>
-        @import './src/styles/clicker-generator.scss';
+        ${stylesString}
       </style>
       <div>
         <h3>${this.gTitle}</h3>
