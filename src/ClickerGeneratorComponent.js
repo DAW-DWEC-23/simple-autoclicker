@@ -28,7 +28,7 @@ export default class ClickerGenerator extends HTMLElement {
   
   connectedCallback() {
     this.render();
-    // this.style.display = "none";
+    this.classList.add('hidden');
     if (this.gLevel > 0) this.resetProgressBar();
     document.addEventListener(Helper.MsgBankUpdate, this);
   }
@@ -93,7 +93,7 @@ export default class ClickerGenerator extends HTMLElement {
 
   updateGeneratorVisibility() {
     if (this.bankSavings >= this.gPrice)
-      this.style.display = "block";
+      this.classList.remove('hidden');
   }
 
   updateUpgradeButtonAvailable() {
