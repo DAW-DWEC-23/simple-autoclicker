@@ -11,7 +11,7 @@ $progress-bar-height: 2px;
 $border-color: #fa6a;
 
 :host {
-  display: inline-block;
+  display: block;
   border: 2px dashed $border-color;
   padding: 0.5rem;
 }

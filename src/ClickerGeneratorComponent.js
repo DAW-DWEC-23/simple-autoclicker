@@ -28,7 +28,7 @@ export default class ClickerGenerator extends HTMLElement {
   
   connectedCallback() {
     this.render();
-    this.style.display = "none";
+    // this.style.display = "none";
     if (this.gLevel > 0) this.resetProgressBar();
     document.addEventListener(Helper.MsgBankUpdate, this);
   }
@@ -93,7 +93,7 @@ export default class ClickerGenerator extends HTMLElement {
 
   updateGeneratorVisibility() {
     if (this.bankSavings >= this.gPrice)
-      this.style.display = "inline-block";
+      this.style.display = "block";
   }
 
   updateUpgradeButtonAvailable() {
@@ -114,7 +114,7 @@ export default class ClickerGenerator extends HTMLElement {
   }
 
   getCurrentCost() {
-    return this.gPrice * 1.5 ** this.gLevel;
+    return this.gPrice * 1.3 ** this.gLevel;
   }
 
   resetProgressBar() {
@@ -129,7 +129,8 @@ export default class ClickerGenerator extends HTMLElement {
 
   updateProgressBar() {
     const progress = this.shadowRoot.querySelector(".clicker-generator-progress");
-    const progressValue = (this.currentCooldownTime) / this.gCooldown;
+    let progressValue = (this.currentCooldownTime) / this.gCooldown;
+    if (progressValue >= 1) progressValue = 1.0;
     progress.style.width = `${progressValue * 100}%`;
     if (progressValue >= 1) {
       this.sendQuantityToBank();
